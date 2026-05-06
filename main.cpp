@@ -1,3 +1,6 @@
+/*
+ * Qt Stuff to change filepermissions
+*/
 #include <QApplication>
 #include <QWidget>
 #include <QLineEdit>
@@ -127,7 +130,7 @@ private:
 
     mode_t collectMode() const {
         mode_t mode = 0;
-
+	// Permissions for files using POSIX Standard
         if (ownerRead->isChecked())  mode |= S_IRUSR;
         if (ownerWrite->isChecked()) mode |= S_IWUSR;
         if (ownerExec->isChecked())  mode |= S_IXUSR;
